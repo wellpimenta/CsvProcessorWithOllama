@@ -1,0 +1,49 @@
+﻿<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Chat-CSV-Processos</title>
+</head>
+<body>
+    <h2>CSV Processamento e Consulta via IA com Chat</h2>
+    <label>Seu nome: <input id="name" /></label><br />
+    <div>Data/Hora Hoje: <span id="now"></span></div>
+    <textarea id="query" rows="4" cols="60" placeholder="Type your question (max 100 words)"></textarea><br />
+    <button id="execute">Execute</button>
+    <button id="clear">Clear</button>
+    <pre id="response"></pre>
+
+    <script>
+function updateTime(){
+  fetch('/time').then(r=>r.json()).then(j=>document.getElementById('now').innerText=j.now);
+}
+updateTime(); setInterval(updateTime, 60000);
+
+function countWords(s){return s.trim().split(/\s+/).filter(x=>x).length;}
+
+document.getElementById('query').addEventListener('input', function(){
+  if (countWords(this.value) > 100) {
+    this.value = this.value.split(/\s+/).slice(0,100).join(' ');
+    alert('Max 100 words');
+  }
+});
+
+document.getElementById('execute').addEventListener('click', async ()=>{
+  const name = document.getElementById('name').value || 'Anonimo';
+  const q = document.getElementById('query').value;
+    document.getElementById('response').innerText = 'Executando...';
+
+  // a Primeira vez que executar o processo
+    const execResp = await fetch('/execute', { method: 'POST' }).then(r => r.json()).catch(e => ({ error: e.toString() }));
+
+  // Enviar a consulta
+  const aiResp = await fetch('/ai/chat', { method: 'POST', headers: {'Content-Type':'application/json'}, body: JSON.stringify({ query: q, user: name }) }).then(r=>r.text()).catch(e=>e.toString());
+  document.getElementById('response').innerText = 'Resultado do Processo:\n' + JSON.stringify(execResp, null, 2) + '\n\nAI response:\n' + aiResp;
+});
+
+document.getElementById('clear').addEventListener('click', ()=>{
+  document.getElementById('query').value=''; document.getElementById('response').innerText='';
+});
+    </script>
+</body>
+</html>

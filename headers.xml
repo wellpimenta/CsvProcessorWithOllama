@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<Headers>
+  <Header name="Codigo" index="1" />
+  <Header name="Nome" index="2" />
+  <Header name="Quantidade" index="3" />
+  <Header name="Taxa" index="4" />
+  <Header name="Status" index="5" />
+</Headers>
+

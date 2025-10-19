@@ -1,18 +1,17 @@
-# CsvProcessorWithOllama
 # Solution CsvProcessorWithOllama
 
-Este √© um exemplo simples do uso da Inteligencia Artificial para processar um arquivo CSV
+Este È um exemplo simples do uso da Inteligencia Artificial para processar um arquivo CSV
 
-A pretens√£o √© ser generico quanto ao arquivo sendo que as colunas propostas tem que existir nesta
+A pretens„o È ser generico quanto ao arquivo sendo que as colunas propostas tem que existir nesta
 mesma ordem do arquivo XML, caso queira incrementar sugiro inicar novas colunas apartir do index=6
 
-A estrutura √© de uma minimal API n√£o separei em pastas para ficar f√°cil o entendimento. 
-Neste caso o TO-DO no final tem sugest√µes de melorias para que voce estude e pratique.
+A estrutura È de uma minimal API n„o separei em pastas para ficar f·cil o entendimento. 
+Neste caso o TO-DO no final tem sugestıes de melorias para que voce estude e pratique.
 
-O que o projeto faz √© ler um arquivo .CSV cujo nome e path vai estar no appsettings.
-ler o cabe√ßalho (colunas) de um arquvio headers.xml
+O que o projeto faz È ler um arquivo .CSV cujo nome e path vai estar no appsettings.
+ler o cabeÁalho (colunas) de um arquvio headers.xml
 
-Caso voce n√£o tenha um arquivo eu deixei na pasta PHYTON um script pra criar o arquivo .CSV
+Caso voce n„o tenha um arquivo eu deixei na pasta PHYTON um script pra criar o arquivo .CSV
 (totalmente freee !! - eu estou muito bonzinho !!)
 
 Usamos a Microsoft.Extension.IA e o projeto Ollama, pagina do dosc -> https://docs.ollama.com/
@@ -25,7 +24,7 @@ exemplo: "Some somente os produtos com 'Codigo' = '47' "
 exemplo 2: "Liste os produtos Codigo ou (primeira coluna) cujo valor calculado seja menor que 100"
 exemplo 3: "Agrupe pelo produto Codigo ou (primeira coluna) todos que o valor Status ou (quinta coluna) seja 'N'"
 
-Para ficar mais legal usei o MONGODB para gravar as execu√ß√µes primarias do projeto.
+Para ficar mais legal usei o MONGODB para gravar as execuÁıes primarias do projeto.
 
 ## Visual Studio
 
@@ -45,24 +44,24 @@ Instale:
     - System.Text.Json" Version="9.0.10"
     - System.Linq.Dynamic.Core Version="1.6.9"
 
-## Instru√ß√µes detalhadas para voce criar seu projeto
+## InstruÁıes detalhadas para voce criar seu projeto
 
-# Crie uma nova pasta e cole este conte√∫do nos arquivos:
+# Crie uma nova pasta e cole este conte˙do nos arquivos:
 appsettings.json (conforme acima)
 headers.xml
-sample.csv na pasta especificada por InputFolder (ou crie a pasta de entrada e coloque o sample.csv l√°)
-Program.cs (o c√≥digo do programa C# deste arquivo)
-wwwroot/index.html (o conte√∫do HTML acima)
+sample.csv na pasta especificada por InputFolder (ou crie a pasta de entrada e coloque o sample.csv l·)
+Program.cs (o cÛdigo do programa C# deste arquivo)
+wwwroot/index.html (o conte˙do HTML acima)
 
-Execute o servidor ollama ou configure o endpoint do Ollama no appsettings.json. Se voc√™ n√£o tiver o Ollama, 
-        ainda pode testar a execu√ß√£o e a inser√ß√£o no Mongo localmente comentando a chamada de IA.
+Execute o servidor ollama ou configure o endpoint do Ollama no appsettings.json. Se vocÍ n„o tiver o Ollama, 
+        ainda pode testar a execuÁ„o e a inserÁ„o no Mongo localmente comentando a chamada de IA.
 
 Execute o projeto (dotnet run) e abra http://localhost:5000 (ou a porta exibida). Use a interface de chat.
 
-Observa√ß√µes:
-A an√°lise do CSV aqui √© simplificada (sem v√≠rgulas entre aspas). Para uso em produ√ß√£o, substitua por CsvHelper.
-A integra√ß√£o com IA chama o endpoint HTTP /api/chat do Ollama. Ajuste caso sua vers√£o do Ollama seja diferente.
-A gera√ß√£o de gr√°ficos usa System.Drawing; em sistemas operacionais n√£o Windows, pode ser necess√°rio instalar depend√™ncias adicionais ou usar uma biblioteca de plotagem como ScottPlot.
+ObservaÁıes:
+A an·lise do CSV aqui È simplificada (sem vÌrgulas entre aspas). Para uso em produÁ„o, substitua por CsvHelper.
+A integraÁ„o com IA chama o endpoint HTTP /api/chat do Ollama. Ajuste caso sua vers„o do Ollama seja diferente.
+A geraÁ„o de gr·ficos usa System.Drawing; em sistemas operacionais n„o Windows, pode ser necess·rio instalar dependÍncias adicionais ou usar uma biblioteca de plotagem como ScottPlot.
 
 ## How to Run
 
@@ -75,19 +74,19 @@ A gera√ß√£o de gr√°ficos usa System.Drawing; em sistemas operacionais n√£o Windo
 
 ## TO-DO
 
-- Voce pode criar uma interface e servi√ßos para algumas fun√ß√µes 
+- Voce pode criar uma interface e serviÁos para algumas funÁıes 
 
 - voce pode e deve modificar o projeto para uma arquitetura mais CLEAN code.
 
 - voce deve usar sua criatividade e criar uma planilha mais especifica de calculo, 
-  Sugest√µes: Fluxo de caixa e ou Deprecia√ß√£o de materiais.
+  Sugestıes: Fluxo de caixa e ou DepreciaÁ„o de materiais.
 
 ESPERO QUE VOCE APRENDA ALGUMA COISA NISTO. 
 
-UM FORTE ABRA√áO.
+UM FORTE ABRA«O.
 
-WELLINGTON GUIMARAES PIMENTA - AUTOR DA Baga√ßa !!
+WELLINGTON GUIMARAES PIMENTA - AUTOR DA BagaÁa !!
 
-"Porque DEUS amou o mundo de tal maneira que deu o seu UNICO filho para nos salvar." Jo√£o 3:16
+"Porque DEUS amou o mundo de tal maneira que deu o seu UNICO filho para nos salvar." Jo„o 3:16
 
-Jesus √© o unico caminho para a vida ETERNA. 
+Jesus È o unico caminho para a vida ETERNA. 
